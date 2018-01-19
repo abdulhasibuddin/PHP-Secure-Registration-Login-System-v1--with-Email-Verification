@@ -1,6 +1,3 @@
-<?php require 'registrationPage2.php';?><!--This line must be the first line of this file to be redirected to the next page by 'header()' function.-->
-<?//----------------------------------------------------------------------------------------------------------------------------?>
-
 <!--This file generates the registration page front-end design::-->
 <!DOCTYPE html>
 <html>
@@ -68,6 +65,7 @@
 	    $pass_char_upper = "<div style='color: blue;'>*Password should contain atleast one uppercase character!</div>";
 	    $pass_char_num = "<div style='color: blue;'>*Password should contain atleast one number!</div>";
 	    $pass_char_spe = "<div style='color: blue;'>*No special character is permitted except (_)!</div>";
+	    require 'registrationPage2.php';
 	?>
 
 	
