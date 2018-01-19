@@ -75,7 +75,7 @@
 		$conPasswrd = secureInput($_POST["conPassword"]); //XSS vulnerability checking of input confirm password
 		if(!preg_match("/^[a-zA-Z0-9_]*$/", $conPasswrd)) { //Regular expression comparison
 			//If input confirmation password doesn't match with input password::
-			$conPasswordErr = "Password doesn't match!";
+			$conPasswordErr = "Password doesn't match! Invalid input.";
 			$errFlag = 1;
 		}
 		//-------------------------------------------------------------------
@@ -84,7 +84,10 @@
 		if($password == $conPasswrd){ //If password & confirmation password are same...
 			$password = password_hash($password, PASSWORD_DEFAULT); //hash the input password[default bcrypt]
 		}
-		else{ $errFlag = 1; } //If password & confirmation password don't match, set error flag high
+		else{ 
+			$conPasswordErr = "Password doesn't match!";
+			$errFlag = 1; 
+		} //If password & confirmation password don't match, set error flag high
 		
 	
 	//-----------------------------------------------------------------------
